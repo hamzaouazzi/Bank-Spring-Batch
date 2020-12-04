@@ -29,14 +29,14 @@ public class SpringBatchConfiguration {
     @Autowired private StepBuilderFactory stepBuilderFactory;
     @Autowired private ItemReader<BankTransaction> bankTransactionItemReader;
     @Autowired private ItemWriter<BankTransaction> bankTransactionItemWriter;
-    @Autowired private ItemProcessor<BankTransaction,BankTransaction> bankTransactionitemProcessor;
+    @Autowired private ItemProcessor<BankTransaction,BankTransaction> bankTransactionItemProcessor;
     @Bean
-    public Job myJob(){
+    public Job bankJob(){
         Step step=stepBuilderFactory.get("ETL-Transaction-File-Load")
                 .<BankTransaction,BankTransaction>chunk(100)
                 .reader(bankTransactionItemReader)
                 .writer(bankTransactionItemWriter)
-                .processor(bankTransactionitemProcessor)
+                .processor(bankTransactionItemProcessor)
                 .build();
         return jobBuilderFactory.get("ETL-Load")
                 .incrementer(new RunIdIncrementer())
