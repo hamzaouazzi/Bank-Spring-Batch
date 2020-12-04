@@ -5,7 +5,7 @@ Spring Batch provides reusable functions that are essential in processing large 
 This project is an implementation of Spring Batch for Data Batch Processing. It covers the following elements:
 
 - Spring Batch architecture
-- Basic concepts of Spring Batch (Job, Step, ItemReader, ItemProcessor, ItemWriter, Flow, JobLauncher, JobRepository)
+- Concepts of Spring Batch (Job, Step, ItemReader, ItemProcessor, ItemWriter, Flow, JobLauncher, JobRepository)
 - Chunk Oriented Processing
 - Configure a Job with Steps
 - ItemReader with a CSV file
